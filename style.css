@@ -1,11 +1,17 @@
-h1 {
-    text-align: center;
-}
+
 
 div {
     text-align:justify
 }
 
-#titulo {
+.titulo {
     background-color: orange;
+    height: 10rem;
+   }
+
+.text_titulo {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    align-content: space-around;
 }
