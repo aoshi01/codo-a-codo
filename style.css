@@ -5,3 +5,7 @@ h1 {
 div {
     text-align:justify
 }
+
+.titulo {
+    background-color: orange;
+}
