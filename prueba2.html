@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dice Roller</title>
+</head>
+<body>
+    <h1>Lanza dados</h1>
+    <div class="dice_box">
+        <form action="" method="get" target="_self">
+            <label for="cara">Number of Faces</label>
+            <input type="text" id="cara">
+            <input type="submit" name="sub" class="sub" value="Roll" onclick="return lanza();">
+        </form>
+    </div>
+    <div id="resultados"></div>
+
+    <script>
+        function lanza() {
+            let cara = parseInt(document.getElementById("cara").value);
+            if (!isNaN(cara) && cara > 0) {
+                let tirada = Math.floor(Math.random() * cara) + 1;
+                document.getElementById("resultados").textContent = tirada;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

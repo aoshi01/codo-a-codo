@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dado.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lanza dados</h1>
+    <div class="dice_box">
+        <form action="" method="get" target="_self">
+            <label for="cara">Number of Faces</label>
+            <input type="text" id="cara">
+            <label for="numerosDados">Cuantos dados deseas </label>
+            <input type="text" id="numerosDados">
+            <input type="submit" name="sub" class="sub" value="Roll" onclick="return lanza();">
+        </form>
+    </div>
+    <div id="resultados"></div>
+
+    <script>
+   
+    function lanza(){
+        let numDads = parseInt(document.getElementById("numerosDados").value);
+        let results = "";
+        for(let i = 0; i < numDads; i++){
+            let cara = parseInt(document.getElementById("cara").value);
+            if (!isNaN(cara) && cara > 0) {
+                let tirada = Math.floor(Math.random() * cara) + 1;
+                results += tirada + " ";
+            }          
+        }
+        document.getElementById("resultados").textContent = results;
+        return false;
+    }
+
+
+
+    
+        
+    </script>
+</body>
+</html>
