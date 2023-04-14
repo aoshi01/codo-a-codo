@@ -6,7 +6,7 @@
 
 .dice_box{
     
-    background-image: url(dado2.png) ;
+    background-image: url(/dado2.png) ;
     background-position: center right;
     background-blend-mode: lighten;
     background-repeat: no-repeat;
