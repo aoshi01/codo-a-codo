@@ -22,17 +22,18 @@
 
     <script>
    
-    function lanza(){
+   function lanza(){
         let numDads = parseInt(document.getElementById("numerosDados").value);
         let results = "";
         for(let i = 0; i < numDads; i++){
             let cara = parseInt(document.getElementById("cara").value);
             if (!isNaN(cara) && cara > 0) {
                 let tirada = Math.floor(Math.random() * cara) + 1;
-                results += tirada + " ";
+                let color = getRandomColor();
+                results += '<span style="color:' + color + ';">' + tirada + '</span> ';
             }          
         }
-        document.getElementById("resultados").textContent = results;
+        document.getElementById("resultados").innerHTML = results;
         return false;
     }
 
@@ -44,8 +45,6 @@
         }
         return color;
     }
-
-
 
     </script>
 </body>
