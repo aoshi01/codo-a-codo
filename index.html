@@ -4,40 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina De Prueba</title>
-    <link rel="stylesheet" href="style.css">
-    
-    
+    <link rel="stylesheet" href="dado.css">
+    <title>Document</title>
 </head>
 <body>
- 
-    <div>
-        <h1 class="Prueba"></h1>
-        <p>
-            <h3>Masa De Pizza</h3>
-                <ul>
-                    <li>Harina 1000 gramos</li>
-                    <li>Agua 550 cm3</li>
-                    <li>sal 30grs</li>
-                    <li>Aceite 50grs</li>
-                    <li>Levadura 30grs</li>
-                </ul>
-        </p>
-
-        <p>
-
-            <h4>Pasos a Seguir</h4>
-                <ol>
-                    <li>Preparar una corona con la harina, colocando la sal por el borde exterior</li>
-                    <li>Colocar el agua en el centro junto con la levadura.</li>
-                    <li>Empezar a mesclar lentamente la harina con el agua y la levadura hasta que se haga un engrudo, incorporar el aceite y seguir agregando hasta que se forme por completo la masa.</li>
-                    <li>Amasar y dejar levar.</li>
-                </ol>
-        </p>
-
+    <h1>Lanza dados</h1>
+    <div class="dice_box">
+        <form action="" method="get" target="_self">
+            <label for="cara">Number of Faces</label>
+            <input type="text" id="cara">
+            <label for="numerosDados">Cuantos dados deseas </label>
+            <input type="text" id="numerosDados">
+            <input type="submit" name="sub" class="sub" value="Roll" onclick="return lanza();">
+        </form>
     </div>
+    <div id="resultados"></div>
 
+    <script>
    
-    
-</body>
-</html>
+    function lanza(){
+        let numDads = parseInt(document.getElementById("numerosDados").value);
+        let results = "";
+        for(let i = 0; i < numDads; i++){
+            let cara = parseInt(document.getElementById("cara").value);
+            if (!isNaN(cara) && cara > 0) {
+                let tirada = Math.floor(Math.random() * cara) + 1;
+                results += tirada + " ";
+            }          
+        }
+        document.getElementById("resultados").textContent = results;
+        return false;
+    }
+
