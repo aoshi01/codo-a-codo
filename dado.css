@@ -1,3 +1,20 @@
+.cont_d{
+    width: 30%;
+    background-color: lightgoldenrodyellow;
+    opacity: 3px;
+}
+
+.dice_box{
+    
+    background-image: url(dado2.png) ;
+    background-position: center right;
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-size: 10rem;
+    
+}
+
 #resultados{
-    font-size: 30rem;
+    background-color: bisque;
+    font-size: 5rem;
 }
